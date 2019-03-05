@@ -1,5 +1,5 @@
 import * as React from "react";
-import Container from "../components/contariner";
+import Home from "../src/home";
 
 export default class App extends React.Component {
     constructor(props) {
@@ -7,18 +7,12 @@ export default class App extends React.Component {
         this.state = {
             num: 1,
         }
-        this.add = this.add.bind(this);
     }
 
-    add() {
-        this.setState((state) => {
-            return { num: state.num + 1 };
-        })
-    }
     render() {
         return (
             <div>
-                <Container />
+                <Home />
             </div>
         )
     }

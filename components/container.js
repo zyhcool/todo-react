@@ -6,7 +6,7 @@ export default class Container extends React.Component{
     }
     render(){
         return(
-            <div style={containerStyle}></div>
+            <div style={containerStyle}>{this.props.children}</div>
         )
     }
 }
