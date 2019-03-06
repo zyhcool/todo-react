@@ -22,15 +22,26 @@ export default class Home extends React.Component {
             <div>
                 <Container>
                     <Header headTitle={"每日任务"} />
-                    <TodoItem data={data} />
+
+                    {
+                        data.map((d) => {
+                            return <TodoItem data={d} />;
+                        })
+                    }
+
                 </Container>
             </div>
         )
     }
 }
 
-const data = {
-    content: "学习React和webpack，使用所学知识开发todo-list应用程序，持续优化",
-    date: "2019-03-07",
-
-}
+const data = [
+    {
+        content: "学习React和webpack，使用所学知识开发todo-list应用程序，持续优化",
+        date: "2019-03-07",
+    },
+    {
+        content: "kjfsdjfjdskfdskfdsj",
+        date: "2019-9-19",
+    }
+]

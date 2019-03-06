@@ -2,14 +2,19 @@ import * as React from "react";
 import Button from "./button";
 
 export default class TodoItem extends React.Component {
+
+    handleClick() {
+        console.log("handleclick");
+        location.replace("/detail");
+    }
     render() {
         return (
-            <div>
+            <div onClick={this.handleClick}>
                 <div style={contentStyle}>{this.props.data.content}</div>
                 <div>{this.props.data.date}</div>
                 <div style={buttonStyle}>
-                    <Button style={{ display:"inline-block", width: "30px", height: "30px" }} iconName={"delete"} />
-                    <Button style={{ display:"inline-block", width: "30px", height: "30px" }} iconName={"done"} />
+                    <Button style={{ display: "inline-block", width: "30px", height: "30px" }} iconName={"delete"} />
+                    <Button style={{ display: "inline-block", width: "30px", height: "30px" }} iconName={"done"} />
                 </div>
             </div>
         )
