@@ -1,8 +1,9 @@
 var path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: "development",
-    entry: path.resolve(__dirname, 'app/index.js'),
+    entry: path.resolve(__dirname, './src/index.tsx'),
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js',
@@ -16,11 +17,13 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /(\.jsx|\.js)$/,
-                use: {
+                test: /(\.jsx|\.js|\.ts|\.tsx)$/,
+                use: [{
                     loader: "babel-loader",
-                },
-                exclude: /node_modules/
+                }, {
+                    loader: "ts-loader",
+                }],
+                exclude: /node_modules/,
             },
             {
                 test: /\.css$/,
@@ -36,4 +39,14 @@ module.exports = {
             }
         ]
     },
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
+        modules: ['src', 'node_modules'],
+    }, // 这个是什么鬼啊 ！！！！
+    plugins: [
+        new HtmlWebpackPlugin({
+            filename: "index.html",
+            template: "_index.html",
+        }),
+    ],
 };

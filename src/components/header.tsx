@@ -1,10 +1,10 @@
 import * as React from "react";
 
-export default class Header extends React.Component {
-    constructor(props) {
+export default class Header extends React.Component<any, any> {
+    constructor(props: any) {
         super(props);
     }
-    render() {
+    public render() {
         return (
             <div>
                 <h1 style={headerStyle}>{this.props.headTitle}</h1>
@@ -13,7 +13,7 @@ export default class Header extends React.Component {
     }
 }
 
-const headerStyle = {
+const headerStyle: React.CSSProperties = {
     width: "100%",
     height: "2.5em",
     backgroundColor: "yellowgreen",

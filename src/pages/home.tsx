@@ -1,10 +1,13 @@
 import * as React from "react";
-import TodoItem from "../components/todoItem";
-import Container from "../components/container";
-import Header from "../components/header";
+import Container from "components/container";
+import Header from "components/header";
+import TodoItem from "components/todoItem";
 
-export default class Home extends React.Component {
-    constructor(props) {
+interface IHomeState {
+    num: number;
+}
+export default class Home extends React.Component<any, IHomeState> {
+    constructor(props: any) {
         super(props);
         this.state = {
             num: 1,
@@ -12,23 +15,22 @@ export default class Home extends React.Component {
         this.add = this.add.bind(this);
     }
 
-    add() {
-        this.setState((state) => {
-            return { num: state.num + 1 };
+    public add() {
+        this.setState((prevState) => {
+            return { num: prevState.num + 1 };
         })
     }
-    render() {
+
+    public render() {
         return (
             <div>
                 <Container>
                     <Header headTitle={"每日任务"} />
-
                     {
                         data.map((d) => {
                             return <TodoItem data={d} />;
                         })
                     }
-
                 </Container>
             </div>
         )

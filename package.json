@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "webpack-dev-server --open",
+    "s": "webpack-dev-server --open",
     "build": "webpack"
   },
   "devDependencies": {
@@ -27,7 +27,11 @@
     "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
+    "@types/react": "^16.8.16",
+    "@types/react-dom": "^16.8.4",
     "react": "^16.8.2",
-    "react-dom": "^16.8.2"
+    "react-dom": "^16.8.2",
+    "ts-loader": "^5.4.6",
+    "typescript": "^3.4.5"
   }
 }

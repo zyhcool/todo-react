@@ -1,17 +1,17 @@
 import * as React from "react";
 
-export default class Container extends React.Component{
-    constructor(props){
+export default class Container extends React.Component<any, any>{
+    constructor(props: any) {
         super(props)
     }
-    render(){
-        return(
+    render() {
+        return (
             <div style={containerStyle}>{this.props.children}</div>
         )
     }
 }
 
-const containerStyle = {
+const containerStyle: React.CSSProperties = {
     maxWidth: "600px",
     width: "100%",
     margin: 0,
