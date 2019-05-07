@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "module": "es6",
-    "target": "es6",
+    "module": "es2015",
+    "target": "esnext",
     "allowSyntheticDefaultImports": true,
     "baseUrl": "src",
     "sourceMap": true,

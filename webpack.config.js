@@ -1,5 +1,7 @@
-var path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     mode: "development",
@@ -26,14 +28,30 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.css$/,
+                test: /\.(c|sa)ss$/,
+                use: [
+                    // {
+                    //     loader: "style-loader",
+                    // }, {
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: true,
+                            localIdentName: "[name]__[local]"
+                        }
+                    }, {
+                        loader: "postcss-loader",
+                    }, {
+                        loader: "sass-loader"
+                    }]
+            },
+            {
+                test: /\.(jpg|png)$/,
                 use: [{
-                    loader: "style-loader",
-                }, {
-                    loader: "css-loader",
+                    loader: "url-loader",
                     options: {
-                        modules: true,
-                        localIdentName: "[name]__[local]"
+                        limit: 1000000,
                     }
                 }]
             }
@@ -48,5 +66,21 @@ module.exports = {
             filename: "index.html",
             template: "_index.html",
         }),
+        new CleanWebpackPlugin(["build/*.*"], { dry: false }),
+        new MiniCssExtractPlugin({
+            filename: "[name].css",
+            chunkFilename: "[name]-[contenthash:12].css",
+        }),
     ],
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: "vender",
+                    chunks: "initial",
+                }
+            }
+        }
+    }
 };
