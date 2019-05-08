@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "s": "webpack-dev-server --open"
+    "s": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --open\""
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

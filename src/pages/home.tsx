@@ -1,7 +1,7 @@
 import * as React from "react";
-import Container from "components/container";
-import Header from "components/header";
-import TodoItem from "components/todoItem";
+import Container from "components/container/container";
+import Header from "components/header/header";
+import TodoItem from "components/todoItem/todoItem";
 
 interface IHomeState {
     num: number;
@@ -25,10 +25,15 @@ export default class Home extends React.Component<any, IHomeState> {
         return (
             <div>
                 <Container>
-                    <Header headTitle={"每日任务"} />
+                    <Header
+                        title={"每日任务"}
+                        backNode={<a>{"返回"}</a>}
+                        back={this.add}
+
+                    />
                     {
                         data.map((d) => {
-                            return <TodoItem data={d} />;
+                            return <TodoItem key={d.date} data={d} />;
                         })
                     }
                 </Container>

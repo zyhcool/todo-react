@@ -28,12 +28,12 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.(c|sa)ss$/,
+                test: /\.(c|sa|sc)ss$/,
                 use: [
                     // {
                     //     loader: "style-loader",
                     // }, {
-                    MiniCssExtractPlugin.loader,
+                    MiniCssExtractPlugin.loader, // 使用这个插件时无需 style-loader
                     {
                         loader: "css-loader",
                         options: {
