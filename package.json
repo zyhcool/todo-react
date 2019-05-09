@@ -10,6 +10,7 @@
     "s": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --open\""
   },
   "devDependencies": {
+    "autoprefixer": "^9.5.1",
     "babel-core": "^6.26.3",
     "babel-loader": "7.0.0",
     "babel-preset-env": "^1.7.0",
@@ -24,6 +25,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-cssnext": "^3.1.0",
     "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.6.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.1.2",
@@ -39,5 +41,9 @@
     "react-dom": "^16.8.2",
     "ts-loader": "^6.0.0",
     "typescript": "^3.4.5"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }

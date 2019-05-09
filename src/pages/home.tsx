@@ -44,7 +44,7 @@ export default class Home extends React.Component<any, IHomeState> {
 
 const data = [
     {
-        content: "学习React和webpack，使用所学知识开发todo-list应用程序，持续优化",
+        content: "jsdfjeoifjdsnfsjdfdsfsdkfj kjfksdjf dkjfksdjf sdjf klsdf dsfj ksdjfk dsf sd djfksf sdf sdf jdsf s fsdjfkj sdf  fjd kfsdjk sd fsd d fsd fsdfds kjdkf dskf dsf d fdskjifejkfndnkljsoire jioioea gdjfierioj fdg0984uoig 84ut igf  u4 terkjfi k",
         date: "2019-03-07",
     },
     {
