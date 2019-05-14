@@ -1,0 +1,11 @@
+@import "./../../constants/scss/common";
+
+.dateSwipper {
+    display: flex;
+    justify-content: space-between;
+    font-size: $fontSize;
+    color: $contentColor;
+    .currentDate {
+        font-size: $fontSize * 1.4;
+    }
+}

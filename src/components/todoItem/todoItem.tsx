@@ -1,19 +1,19 @@
 import * as React from "react";
 import MyButton from "../button/button";
 import "./todoItem.scss";
+import browserHistory from "utils/browserHistory";
 
 interface ITodoItemProps {
     style?: React.CSSProperties;
-
+    data: any;
 }
-export default class TodoItem extends React.Component<any,any> {
-    constructor(props: any){
+export default class TodoItem extends React.Component<ITodoItemProps, any> {
+    constructor(props: ITodoItemProps) {
         super(props);
     }
 
     handleClick() {
-        console.log("handleclick");
-        location.replace("/detail");
+        browserHistory.push("/detail");
     }
     render() {
         return (
